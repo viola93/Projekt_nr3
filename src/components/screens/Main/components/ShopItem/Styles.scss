@@ -1,0 +1,31 @@
+.shop-item {
+  .code-name {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+
+    .code {
+      flex: 125px 0;
+    }
+
+    .name {
+      flex: 1;
+      white-space: nowrap;
+      margin: 0;
+    }
+  }
+
+  .amount {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    padding: 10px;
+    border: 1px solid #f6f8f7;
+    border-radius: 6px;
+    background-color: #353631;
+    color: #f6f8f7;
+    width: max-content;
+    box-sizing: border-box;
+  }
+}

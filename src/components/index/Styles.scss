@@ -1,0 +1,16 @@
+body {
+  background-color: #bfbfbf;
+  color: #353631;
+  margin: 0;
+  padding: 15px;
+}
+
+.app-index-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+
+  .header {
+    margin: 0;
+  }
+}
