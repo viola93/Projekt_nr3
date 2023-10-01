@@ -1,35 +1,28 @@
 import React, { useState } from "react";
-import ShopItem from "./components/ShopItem/Presentational";
-import NewItem from "./components/NewItem/Presentational";
+
 import "./Styles.scss";
+import Login from "./components/Login/Presentational";
+import Register from "./components/Registration/Presentational";
 
 const Main = () => {
-  const [items, setItem] = useState([]);
+  const [currentForm, setCurrentForm] = useState("login");
 
-  const addItem = (newItemData) => {
-    setItem((oldItem) => [...oldItem, newItemData]);
+  const toggleForm = (forName) => {
+    setCurrentForm(forName);
   };
 
-  let content = items.length ? (
-    <>
-      {" "}
-      {items.map((item) => (
-        <ShopItem
-          key={item.id}
-          codeprops={item.code}
-          nameprops={item.name}
-          amountprops={item.amount}
-        />
-      ))}
-    </>
-  ) : (
-    <h2 className="no-item">All items are out of stock!</h2>
-  );
-
   return (
-    <div className="main-container">
-      <NewItem addItemprops={addItem} />
-      {content}
+    <div>
+      {currentForm === "login" ? (
+        <>
+          {" "}
+          <Login Loginprops={toggleForm} />
+        </>
+      ) : (
+        <>
+          <Register Registernprops={toggleForm} />
+        </>
+      )}
     </div>
   );
 };
